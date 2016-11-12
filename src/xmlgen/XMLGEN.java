@@ -25,7 +25,7 @@ import org.w3c.dom.Element;
 
 public class XMLGEN {
     
-    public XMLGEN(String[] StringArray1, String[] StringArray2){
+    public XMLGEN(String[] NodeName, String[] NodeText){
         try {
               
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -34,10 +34,10 @@ public class XMLGEN {
             Element rootElement = doc.createElement("Course");
             doc.appendChild(rootElement);
 
-                for (int i = 0; i <StringArray1.length; i++) {
-                    Element Prefix = doc.createElement(StringArray1[i]);
-                    Prefix.appendChild(doc.createTextNode(StringArray2[i]));
-                    rootElement.appendChild(Prefix);
+                for (int i = 0; i <NodeName.length; i++) {
+                    Element e = doc.createElement(NodeName[i]);
+                    e.appendChild(doc.createTextNode(NodeText[i]));
+                    rootElement.appendChild(e);
                 }
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -52,9 +52,11 @@ public class XMLGEN {
 
             System.out.println("File saved!");
 
-            } catch (ParserConfigurationException pce) {
+            } 
+        catch (ParserConfigurationException pce) {
                     pce.printStackTrace();
-            } catch (TransformerException tfe) {
+            } 
+        catch (TransformerException tfe) {
                     tfe.printStackTrace();
             }
     }
