@@ -45,7 +45,7 @@ public class XMLGEN {
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("C:\\file.xml"));
+            StreamResult result = new StreamResult(new File("file.xml"));
 
 
             transformer.transform(source, result);
