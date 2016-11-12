@@ -19,7 +19,6 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -40,6 +39,9 @@ public class XMLGEN {
                 {
                     if(StringArray[0][j]=="Prerequisite")
                     {
+                        for (int i = 0; StringArray[0][i]=="Prerequisite"; i++) {
+                            
+                        }
                     }
                     else
                     {
@@ -74,7 +76,7 @@ public class XMLGEN {
     }
         
 
-    private Element getElement throws Exception(String elementName, String Text)
+    private Element getElement(String elementName, String Text)throws Exception
     {
         
 
@@ -84,7 +86,7 @@ public class XMLGEN {
               Element e = doc.createElement(elementName);
               e.appendChild(doc.createTextNode(Text));
               
-        return e;   
+              return e;   
     }
 }
 
