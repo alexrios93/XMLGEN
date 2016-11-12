@@ -5,6 +5,8 @@
  */
 package xmlgen;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Adrian
@@ -17,41 +19,49 @@ public class Test {
      */
     
     public static void main(String[] args) {
-        String[] StringArray1 = {  "Department", 
-                                "Prefix",
-                                "Number",
-                                "Name",
-                                "Description",
-                                "Credit-hours",
-                                "Lecture-hours",
-                                "Lab-hours",
-                                "Level",
-                                "Schedule-type",
-                                "Prerequisite",
-                                "Co-requisite",
-                                "Course-attributes",
-                                "Legacy-number",
-                                "Cross-listed",
-                                "Restrictions",
-                                
+        String[] StringArray1 = {
+            "Department",
+            "Prefix",
+            "Number",
+            "Name",
+            "Description",
+            "Credit-hours",
+            "Lecture-hours",
+            "Lab-hours",
+            "Level",
+            "Schedule-type",
+            "Prerequisite",
+            "Co-requisite",
+            "Legacy-number",
+            "Cross-listed",
+            "Restrictions",
+            "Course-attributes"};
+        
+        String[] StringArray2 = {
+            "Computer Science",
+            "CSCI", 
+            "2388",
+            "Computer Science II HON",
+            "A second programming course includes problem solving by structured design. Provides an introduction to elementary data structures, including linked lists, stacks, queues, trees and graphs, and advanced programming techniques, including recursion, sorting and searching.",
+            "3.000", 
+            "3.000",
+            "0.000", 
+            "Undergraduate",
+            "Lecture", 
+            "Undergraduate level CSCI 1378 Minimum Grade of D or Undergraduate level CSCI 1370 Minimum Grade of D or Undergraduate level CMPE 1370 Minimum Grade of D ",
+            "None",
+            "Degree Elective, CS Instruction Fee -LU",
+            "None",
+            "CMPE 2388",
+            "May not be enrolled in one of the following Programs: dnu MED in Educational Admin MPA in Public Administration Bus. Admin Accelerated online May not be enrolled in one of the following Levels: English Language Institute"
         };
-        String[] StringArray2 = {  "Computer Science",
-                                "CSCI", 
-                                "2388",
-                                "Computer Science II HON",
-                                "A second programming course includes problem solving by structured design. Provides an introduction to elementary data structures, including linked lists, stacks, queues, trees and graphs, and advanced programming techniques, including recursion, sorting and searching.",
-                                "3.000", 
-                                "3.000",
-                                "0.000", 
-                                "Undergraduate",
-                                "Lecture", 
-                                "Undergraduate level CSCI 1378 Minimum Grade of D or Undergraduate level CSCI 1370 Minimum Grade of D or Undergraduate level CMPE 1370 Minimum Grade of D ",
-                                "None",
-                                "Degree Elective, CS Instruction Fee -LU",
-                                "None",
-                                "CMPE 2388",
-                                "May not be enrolled in one of the following Programs: dnu MED in Educational Admin MPA in Public Administration Bus. Admin Accelerated online May not be enrolled in one of the following Levels: English Language Institute"
-        };
+        
+        Scanner scanner = new Scanner(System.in);
+        
+//        for (int i = 0; i < StringArray2.length; i++) {
+//            System.out.println("Enter the " + StringArray1[i]);
+//            StringArray2[i] = scanner.nextLine(); //This will overide the default node values of the array           
+//        }
     
         XMLGEN test = new XMLGEN(StringArray1, StringArray2);
     

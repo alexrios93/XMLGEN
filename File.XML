@@ -12,8 +12,8 @@
   <Schedule-type>Lecture</Schedule-type>
   <Prerequisite>Undergraduate level CSCI 1378 Minimum Grade of D or Undergraduate level CSCI 1370 Minimum Grade of D or Undergraduate level CMPE 1370 Minimum Grade of D </Prerequisite>
   <Co-requisite>None</Co-requisite>
-  <Course-attributes>Degree Elective, CS Instruction Fee -LU</Course-attributes>
-  <Legacy-number>None</Legacy-number>
-  <Cross-listed>CMPE 2388</Cross-listed>
-  <Restrictions>May not be enrolled in one of the following Programs: dnu MED in Educational Admin MPA in Public Administration Bus. Admin Accelerated online May not be enrolled in one of the following Levels: English Language Institute</Restrictions>
+  <Legacy-number>Degree Elective, CS Instruction Fee -LU</Legacy-number>
+  <Cross-listed>None</Cross-listed>
+  <Restrictions>CMPE 2388</Restrictions>
+  <Course-attributes>May not be enrolled in one of the following Programs: dnu MED in Educational Admin MPA in Public Administration Bus. Admin Accelerated online May not be enrolled in one of the following Levels: English Language Institute</Course-attributes>
 </Course>
