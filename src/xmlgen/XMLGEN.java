@@ -6,6 +6,7 @@
 package xmlgen;
 
 import java.io.File;
+import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -24,6 +25,43 @@ import org.w3c.dom.Element;
  */
 
 public class XMLGEN {
+    
+    public XMLGEN(ArrayList<String> NodeName, ArrayList<String> NodeText){
+        try {
+              
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            Document doc = docBuilder.newDocument();
+            Element rootElement = doc.createElement("Course");
+            doc.appendChild(rootElement);
+
+                for (int i = 0; i <NodeName.size(); i++) {
+                    Element e = doc.createElement(NodeName.get(i));
+                    e.appendChild(doc.createTextNode(NodeText.get(i)));
+                    rootElement.appendChild(e);
+                }
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File("file.xml"));
+
+
+            transformer.transform(source, result);
+
+            System.out.println("File saved!");
+
+            } 
+        catch (ParserConfigurationException pce) {
+                    pce.printStackTrace();
+            } 
+        catch (TransformerException tfe) {
+                    tfe.printStackTrace();
+            }
+    }
+    
     
     public XMLGEN(String[] NodeName, String[] NodeText){
         try {
