@@ -25,8 +25,19 @@ import org.w3c.dom.Element;
  */
 
 public class XMLGEN {
+    XMLGEN()
+    {
+    }
+    XMLGEN(ArrayList<String> NodeName, ArrayList<String> NodeText)
+    {
+    }
+    XMLGEN(String[] NodeName, String[] NodeText)
+    {
+    }
+    //create sets and gets nest tuesday exam software engineering
     
-    public XMLGEN(ArrayList<String> NodeName, ArrayList<String> NodeText){
+    
+    public void generateWithArraylists(ArrayList<String> NodeName, ArrayList<String> NodeText){
         try {
               
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -63,7 +74,7 @@ public class XMLGEN {
     }
     
     
-    public XMLGEN(String[] NodeName, String[] NodeText){
+    public void generateWithArrays(String[] NodeName, String[] NodeText){
         try {
               
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
