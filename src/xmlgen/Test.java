@@ -54,7 +54,7 @@ public class Test {
         };
     
         XMLGEN test = new XMLGEN();
-        test.generateWithArrays(StringArray1, StringArray2);
+        test.generateWithArrays(StringArray1, StringArray2, "CSCI-3333");
         
         
        
