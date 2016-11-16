@@ -28,16 +28,16 @@ public class XMLGEN {
     XMLGEN()
     {
     }
-    XMLGEN(ArrayList<String> NodeName, ArrayList<String> NodeText)
+    XMLGEN(ArrayList<String> NodeName, ArrayList<String> NodeText, String filename)
     {
     }
-    XMLGEN(String[] NodeName, String[] NodeText)
+    XMLGEN(String[] NodeName, String[] NodeText, String filename)
     {
     }
     //create sets and gets nest tuesday exam software engineering
     
     
-    public void generateWithArraylists(ArrayList<String> NodeName, ArrayList<String> NodeText){
+    public void generateWithArraylists(ArrayList<String> NodeName, ArrayList<String> NodeText, String filename){
         try {
               
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -57,7 +57,7 @@ public class XMLGEN {
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("file.xml"));
+            StreamResult result = new StreamResult(new File(filename + ".xml"));
 
 
             transformer.transform(source, result);
@@ -74,7 +74,7 @@ public class XMLGEN {
     }
     
     
-    public void generateWithArrays(String[] NodeName, String[] NodeText){
+    public void generateWithArrays(String[] NodeName, String[] NodeText, String filename){
         try {
               
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -94,7 +94,7 @@ public class XMLGEN {
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("file.xml"));
+            StreamResult result = new StreamResult(new File(filename + ".xml"));
 
 
             transformer.transform(source, result);
