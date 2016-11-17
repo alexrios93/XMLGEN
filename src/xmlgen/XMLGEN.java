@@ -34,7 +34,7 @@ public class XMLGEN {
     XMLGEN(String[] NodeName, String[] NodeText, String filename)
     {
     }
-    //create sets and gets nest tuesday exam software engineering
+  
     
     
     public void generateWithArraylists(ArrayList<String> NodeName, ArrayList<String> NodeText, String filename){
