@@ -28,22 +28,22 @@ public class XMLGEN {
     XMLGEN()
     {
     }
-    XMLGEN(ArrayList<String> NodeName, ArrayList<String> NodeText, String filename)
+    XMLGEN(ArrayList<String> NodeName, ArrayList<String> NodeText, String filename, String RootNode)
     {
     }
-    XMLGEN(String[] NodeName, String[] NodeText, String filename)
+    XMLGEN(String[] NodeName, String[] NodeText, String filename, String RootNode)
     {
     }
   
     
     
-    public void generateWithArraylists(ArrayList<String> NodeName, ArrayList<String> NodeText, String filename){
+    public void generateWithArraylists(ArrayList<String> NodeName, ArrayList<String> NodeText, String filename, String RootNode){
         try {
               
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
             Document doc = docBuilder.newDocument();
-            Element rootElement = doc.createElement("Course");
+            Element rootElement = doc.createElement(RootNode);
             doc.appendChild(rootElement);
 
                 for (int i = 0; i <NodeName.size(); i++) {
@@ -74,13 +74,13 @@ public class XMLGEN {
     }
     
     
-    public void generateWithArrays(String[] NodeName, String[] NodeText, String filename){
+    public void generateWithArrays(String[] NodeName, String[] NodeText, String filename, String RootNode){
         try {
               
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
             Document doc = docBuilder.newDocument();
-            Element rootElement = doc.createElement("Course");
+            Element rootElement = doc.createElement(RootNode);
             doc.appendChild(rootElement);
 
                 for (int i = 0; i <NodeName.length; i++) {
@@ -92,7 +92,7 @@ public class XMLGEN {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new File(filename + ".xml"));
 
